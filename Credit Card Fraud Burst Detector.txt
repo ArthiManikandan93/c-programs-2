@@ -1,0 +1,38 @@
+#include <stdio.h>
+
+int main(){
+    int N;
+    scanf("%d", &N);
+
+    int amount;
+    int i = 0;
+    int consecutiveHigh = 0;
+    int totalHigh = 0;
+    int fraudAttempt = -1;
+
+    while(i < N){
+        scanf("%d", &amount);
+
+        if(amount >= 50000){
+            totalHigh++;
+            consecutiveHigh++;
+        } else {
+            consecutiveHigh = 0;
+        }
+
+        if(consecutiveHigh == 3 && fraudAttempt == -1){
+            fraudAttempt = i + 1;   // attempt number (1-based index)
+        }
+
+        i++;
+    }
+
+    if(fraudAttempt == -1)
+        printf("Fraud Triggered At Attempt: Not Triggered\n");
+    else
+        printf("Fraud Triggered At Attempt: %d\n", fraudAttempt);
+
+    printf("High-Value Transactions: %d", totalHigh);
+
+    return 0;
+}
