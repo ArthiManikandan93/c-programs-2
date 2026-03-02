@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main() {
+    int i, j, rows;
+    char start;
+
+    scanf("%d", &rows);
+
+    for(i = 1; i <= rows; i++) {
+
+        start = 'A' + rows - i;
+
+        for(j = 0; j < i; j++) {
+            printf(" %c", start + j);
+        }
+
+        printf("\n");
+    }
+
+    return 0;
+}
