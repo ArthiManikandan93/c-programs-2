@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+int main() {
+    int capacity, N;
+    int i = 0;
+     
+    int change;
+    int criticalhours= 0;
+    int occupiedbeds = 0;
+   
+
+    scanf("%d", &capacity);
+    scanf("%d", &N);
+
+    
+    while (i < N) {
+        scanf("%d", &change);
+        occupiedbeds += change;
+        if (occupiedbeds > 0.9 * capacity ) {
+             
+           criticalhours++;
+        } 
+
+        i++;
+    }
+
+
+    printf("Final Occupied Beds: %d\n",occupiedbeds );
+        printf("Critical Hours:%d\n",criticalhours);
+
+    return 0;
+}
