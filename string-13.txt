@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+int main() {
+    char str[100],dest[100];
+    int i;
+
+    scanf("%s", str);
+ 
+
+    for(i = 0; str[i] != '\0'; i++) {
+        dest[i] = str[i];
+        
+    }
+    dest[i]='\0';
+
+    printf("%s", dest);
+
+    return 0;
+}
