@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int main() {
+    char word[100];
+    int i, count = 1;
+
+    fgets(word, sizeof(word), stdin);
+
+    for(i = 0; word[i] != '\0'; i++) {
+        if(word[i] == ' ') {
+            count++;
+        }
+    }
+
+    printf("%d", count);
+
+    return 0;
+}
